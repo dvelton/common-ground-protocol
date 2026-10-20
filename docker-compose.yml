@@ -1,0 +1,14 @@
+services:
+  common-ground:
+    build: .
+    ports:
+      - '3000:3000'
+    environment:
+      CGP_DATABASE_PATH: /app/data/common-ground.sqlite
+      CGP_PORT: 3000
+      CGP_HOST: 0.0.0.0
+    volumes:
+      - common-ground-data:/app/data
+
+volumes:
+  common-ground-data:
